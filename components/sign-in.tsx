@@ -32,7 +32,7 @@ export function SignIn() {
   const getErrorMessage = (value: string) => {
     if (value.toLowerCase() !== "unable_to_get_user_info") return value;
     return [
-      "GitHub denied profile access. Re-authorize Pages CMS in GitHub Settings > Applications > Authorized GitHub Apps / Authorized OAuth Apps, then try again.",
+      "GitHub denied profile access. Re-authorize Snelgrove CMS in GitHub Settings > Applications > Authorized GitHub Apps / Authorized OAuth Apps, then try again.",
       "https://github.com/settings/applications",
     ].join(" ");
   };
@@ -131,31 +131,13 @@ export function SignIn() {
     setOtp("");
   };
 
-  const legalCopy = (
-    <p className="text-sm text-muted-foreground">
-      By clicking continue, you agree to our{" "}
-      <a
-        className="underline hover:decoration-muted-foreground/50"
-        href="https://pagescms.org/terms"
-        target="_blank"
-      >
-        Terms of Service
-      </a>{" "}
-      and{" "}
-      <a
-        className="underline hover:decoration-muted-foreground/50"
-        href="https://pagescms.org/privacy"
-        target="_blank"
-      >
-        Privacy Policy
-      </a>
-      .
-    </p>
-  );
+  const legalCopy = null;
 
   return (
     <div className="min-h-screen p-4 md:p-6 flex justify-center items-center">
       <div className="sm:max-w-[340px] w-full">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/snelgrove-logo.svg" alt="Snelgrove Ice Cream" className="h-16 mx-auto mb-8" />
         {step === "otp" ? (
           <div className="space-y-6">
             <OtpVerificationForm
@@ -178,7 +160,7 @@ export function SignIn() {
         ) : (
           <div className="space-y-6">
             <h1 className="text-lg font-medium tracking-tight text-center">
-              Sign in to Pages CMS
+              Sign in to Snelgrove CMS
             </h1>
             <Button
               type="button"
